@@ -1,4 +1,4 @@
-style=/home/dy/.config/wofi/style.css
+style=/home/rs/.cache/wal/colors-wofi.css
 show=drun
 width=400
 height=400

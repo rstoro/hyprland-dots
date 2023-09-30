@@ -19,7 +19,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 #gsettings set org.gnome.desktop.interface icon-theme 'Win11-dark'
 #gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Dark-BL'
 #gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur Cursors'
-#gsettings set org.gnome.desktop.interface font-name 'JetBrains Mono Nerd'
+#gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font'
 
 export WLR_NO_HARDWARE_CURSORS=1
 export WLR_RENDERER_ALLOW_SOFTWARE=1
