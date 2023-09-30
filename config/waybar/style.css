@@ -32,7 +32,7 @@ window#waybar {
     border-radius: 12px;
     font-weight: normal;
     font-style: normal;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 #workspaces button {
@@ -42,8 +42,8 @@ window#waybar {
     color: @color11;
     background-color: @color11;
     transition: all 0.3s ease-in-out;
-    opacity:0.4;
-    font-size:13px;
+    opacity: 0.4;
+    font-size: 13px;
 }
 
 #workspaces button.active {
@@ -53,7 +53,7 @@ window#waybar {
     min-width: 30px;
     background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
-    opacity:1.0;
+    opacity: 1.0;
 }
 
 #workspaces button:hover {
@@ -71,9 +71,9 @@ window#waybar {
 tooltip {
     border-radius: 10px;
     background-color: #FFFFFF;
-    opacity:0.8;
-    padding:20px;
-    margin:0px;
+    opacity: 0.8;
+    padding: 20px;
+    margin: 0px;
 }
 
 tooltip label {
@@ -89,14 +89,14 @@ tooltip label {
     margin: 5px 15px 5px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 12px;
-    color:@background;
-    font-size:16px;
-    font-weight:normal;
-    opacity:0.8;
+    color: @background;
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.8;
 }
 
 window#waybar.empty #window {
-    background-color:transparent;
+    background-color: transparent;
 }
 
 /* -----------------------------------------------------
@@ -104,19 +104,18 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #taskbar {
-    /* background: @color11; */
-    background: #FFFFFF;
+    background: @color11;
     margin: 3px 15px 3px 0px;
     padding: 2px 3px 1px 3px;
     border-radius: 14px;
     font-weight: normal;
     font-style: normal;
-    opacity:0.8;
+    opacity: 0.8;
     border: 3px solid #FFFFFF;
 }
 
 #taskbar button {
-    margin:0;
+    margin: 0;
     padding: 0px 5px 0px 5px;
 }
 
@@ -136,6 +135,8 @@ window#waybar.empty #window {
  * Generic
  * ----------------------------------------------------- */
 
+#idle_inhibitor,
+#tray,
 #temperature,
 #disk,
 #memory,
@@ -157,12 +158,12 @@ window#waybar.empty #window {
 {
     background-color: @color11;
     font-size: 16px;
-    /*color: @background;*/
+    /* color: @foreground; */
     color:#FFFFFF;
     border-radius: 14px;
     padding: 2px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
-    opacity:0.8;
+    opacity: 0.8;
     border: 3px solid #FFFFFF
 }
 
