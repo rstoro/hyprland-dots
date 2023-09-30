@@ -51,6 +51,36 @@ window#waybar {
     min-width: 30px;
     opacity: 1.0;
     border-radius: 10px;
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+    background: radial-gradient(
+    	circle, 
+	@color6,
+	@color11,
+	@color6
+	/* rgba(203,166,247,1) 0%,
+	rgba(193,168,247,1) 12%,
+	rgba(249,226,175,1) 19%,
+	rgba(189,169,247,1) 20%,
+	rgba(182,171,247,1) 24%,
+	rgba(198,255,194,1) 36%,
+	rgba(177,172,247,1) 37%,
+	rgba(170,173,248,1) 48%,
+	rgba(255,255,255,1) 52%,
+	rgba(166,174,248,1) 52%,
+	rgba(160,175,248,1) 59%,
+	rgba(148,226,213,1) 66%,
+	rgba(155,176,248,1) 67%,
+	rgba(152,177,248,1) 68%,
+	rgba(205,214,244,1) 77%,
+	rgba(148,178,249,1) 78%,
+	rgba(144,179,250,1) 82%,
+	rgba(180,190,254,1) 83%,
+	rgba(141,179,250,1) 90%,
+	rgba(137,180,250,1) 100% */
+    );
+    background-size: 400% 400%;
+    animation: gradient_f 30s infinite ease-in-out;
+    /*
     background: linear-gradient(
     	45deg, 
 	@color6,
@@ -59,7 +89,7 @@ window#waybar {
     );
     background-size: 1000% 100%;
     animation: gradient_belt 5s infinite linear;
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+    */
 }
 
 #workspaces button:hover {
@@ -169,52 +199,7 @@ window#waybar.empty #window {
     margin: 3px 15px 3px 0px;
     opacity: 0.8;
     border: 3px solid #FFFFFF;
-    background: radial-gradient(
-    	circle, 
-	@color10 0%,
-	@color9 12%,
-	@color11 19%,
-	@color9 20%,
-	@color9 24%,
-	@color9 36%,
-	@color8 37%,
-	@color8 48%,
-	@color11 52%,
-	@color8 52%,
-	@color8 59%,
-	@color7 66%,
-	@color7 67%,
-	@color7 68%,
-	@color10 77%,
-	@color7 78%,
-	@color6 82%,
-	@color9 83%,
-	@color6 90%,
-	@color6 100%
-	/* rgba(203,166,247,1) 0%,
-	rgba(193,168,247,1) 12%,
-	rgba(249,226,175,1) 19%,
-	rgba(189,169,247,1) 20%,
-	rgba(182,171,247,1) 24%,
-	rgba(198,255,194,1) 36%,
-	rgba(177,172,247,1) 37%,
-	rgba(170,173,248,1) 48%,
-	rgba(255,255,255,1) 52%,
-	rgba(166,174,248,1) 52%,
-	rgba(160,175,248,1) 59%,
-	rgba(148,226,213,1) 66%,
-	rgba(155,176,248,1) 67%,
-	rgba(152,177,248,1) 68%,
-	rgba(205,214,244,1) 77%,
-	rgba(148,178,249,1) 78%,
-	rgba(144,179,250,1) 82%,
-	rgba(180,190,254,1) 83%,
-	rgba(141,179,250,1) 90%,
-	rgba(137,180,250,1) 100% */
-    );
-    background-size: 400% 400%;
-    animation: gradient_f 30s infinite ease-in-out;
-
+    background-color: @color11;
 }
 
 #battery.critical:not(.charging) {

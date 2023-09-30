@@ -13,7 +13,7 @@ cp $wallpaper ~/.cache/current_wallpaper.jpg
 newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # Set the new wallpaper
-swww img $wallpaper --transition-step 20 --transition-fps=20
+swww img --transition-fps 60 --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 $wallpaper
 ~/.config/waybar/launch.sh
 sleep 1
 
