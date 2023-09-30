@@ -9,11 +9,10 @@
 
     "modules-left": [ 
     	"battery", 
-	"bluetooth", 
+	"temperature", 
 	"disk",
 	"memory",
 	"cpu",
-	"temperature", 
 	"idle_inhibitor"
     ],
     "modules-center": [
@@ -22,7 +21,7 @@
     ],
     "modules-right": [
 	"tray", 
-    	"backlight", 
+	"bluetooth", 
 	"pulseaudio", 
 	"network",  
 	"clock"
@@ -32,10 +31,13 @@
 	"all-outputs": true,
       	"format": "{icon}",
       	"format-icons": {
-	    "urgent": "",
-	    "active": "",
-	    "default": ""
+	    "urgent": "",
+	    "active": "",
+	    "default": ""
        	},
+	"persistent_workspaces": {
+	    "*": 5
+	},
     },
     "idle_inhibitor": {
 	"format": "{icon}",
@@ -61,8 +63,8 @@
 	"interval": 30,
       	"thermal-zone": 2,
       	"critical-threshold": 70,
-      	"format-critical": " {temperatureC}°C",
-      	"format": " {temperatureC}°C"
+      	"format-critical": "  {temperatureC}°C",
+      	"format": "  {temperatureC}°C"
     },
 
     "hyprland/window": {
@@ -84,8 +86,8 @@
     },
     
     "clock": {
-        "format": "<span color='#bf616a'> </span>{:%I:%M %p}",
-        "format-alt": "<span color='#bf616a'> </span>{:%a %b %d}",
+        "format": "  {:%I:%M %p}",
+        "format-alt": "  {:%a %b %d}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     },
 
@@ -133,13 +135,13 @@
           "critical": 15
       },
       "max-length": 20,
-      "format": "{icon} {capacity}%",
-      "format-warning": "{icon} {capacity}%",
-      "format-critical": "{icon} {capacity}%",
+      "format": "{icon}  {capacity}%",
+      "format-warning": "{icon}  {capacity}%",
+      "format-critical": "{icon}  {capacity}%",
       "format-charging": " {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-alt": "{icon} {time}",
-      "format-full": " {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{icon}  {time}",
+      "format-full": "  {capacity}%",
       "format-icons": [" ", "  ", "  ", "  ", "  "],
     },
 }
