@@ -27,4 +27,4 @@ sudo cp -r usr_scripts/* /usr/local/bin/
 # make wallpaper folder
 mkdir ~/wallpaper
 
-# TODO: find OCR screencap, configure waybar with dynamic colors from pywal, configure gui bluetooth/wifi, configure dunst to not look like garbage
+# TODO: find OCR screencap, configure waybar with dynamic colors from pywal, configure gui bluetooth/wifi
