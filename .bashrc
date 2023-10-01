@@ -14,3 +14,4 @@ eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 echo ""
 pfetch
+wal --preview
