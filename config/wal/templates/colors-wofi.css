@@ -1,17 +1,15 @@
 window {{
     margin: 0px;
-    border: 2px solid rgba(ffffffff);
     border-radius: 5px;
-    background-color: {background};
+    background-color: {color15};
     font-family: JetBrainsMono Nerd Font, Symbols Nerd Font Mono;
     font-size: 16px;
 }}
 
 #input {{
     margin: 5px;
-    border: 1px solid {background};
     color: {color1};
-    background-color: {background};
+    background-color: {color15};
 }}
 
 #input image {{
@@ -21,13 +19,13 @@ window {{
 #inner-box {{
     margin: 5px;
     border: none;
-    background-color: {background};
+    background-color: {color8};
 }}
 
 #outer-box {{
     margin: 5px;
     border: none;
-    background-color: {background};
+    background-color: {color8};
 }}
 
 #scroll {{
@@ -38,16 +36,18 @@ window {{
 #text {{
     margin: 5px;
     border: none;
-    color: {color1};
+    color: {color15};
 }} 
 
 #entry:selected {{
-    background-color: {color11};
-    font-weight: normal;
+    background-color: {color1};
+    font-weight: bold;
+    color: {color11};
 }}
 
 #text:selected {{
-    background-color: {color11};
-    font-weight: normal;
+    background-color: {color1};
+    font-weight: bold;
+    color: {color11};
 }}
 
