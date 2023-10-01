@@ -24,7 +24,7 @@ cp -r config/* ~/.config/
 # copy user scripts
 sudo cp -r usr_scripts/* /usr/local/bin/
 
-# make wallpaper folder
+# make wallpaper directory
 mkdir ~/wallpaper
 
-# TODO: find OCR screencap, configure waybar with dynamic colors from pywal, configure gui bluetooth/wifi
+# TODO: find OCR screencap, configure gui bluetooth/wifi
