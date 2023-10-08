@@ -10,7 +10,7 @@ makepkg -sri
 rm -rf yay-bin
 
 # install additional deps
-yay -Syyu hyprland-git waybar-hyprland-git wlr-randr xdg-desktop-portal-hyprland polkit-kde-agent kitty wofi dunst clipman brightnessctl grim slurp starship ranger python-pillow wf-recorder swww pywal pfetch gifski bluez bluez-utils pipewire Networkmanager ttf-jetbrains-mono-nerd ttf-nerd-font-symbols-mono
+yay -Syyu hyprland-git waybar-hyprland-git wlr-randr xdg-desktop-portal-hyprland polkit-kde-agent kitty wofi dunst clipman brightnessctl grim slurp starship ranger python-pillow wf-recorder swww pywal pfetch gifski bluez bluez-utils pipewire Networkmanager ttf-jetbrains-mono-nerd ttf-nerd-font-symbols-mono xwaylandvideobridge-cursor-mode-2-git
 
 # personal packages
 yay -Syyu neovim curl wget flatpak flatseal
