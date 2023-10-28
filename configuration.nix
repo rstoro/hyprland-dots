@@ -15,8 +15,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # networking
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking.hostName = "nixos"; # Define your hostname.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # timezone
   time.timeZone = "EST5EDT";
@@ -66,6 +66,7 @@
     vim
     wget
     git
+    procps
     pfetch
     (pkgs.python3.withPackages(ps: with ps; [ pywal ]))
     wofi
