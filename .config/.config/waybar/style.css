@@ -1,0 +1,276 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+* {
+  font-family: "Hack Nerd Font";
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    background: #FFFFFF;
+    margin: 5px 5px 5px 5px;
+    padding: 4px 1px;
+    border-radius: 12px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 0.8;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    margin: 0px 3px;
+    border-radius: 12px;
+    color: @color11;
+    background-color: @color11;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+    font-size: 13px;
+}
+
+#workspaces button.active {
+    color: #cdd6f4;
+    min-width: 30px;
+    opacity: 1.0;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+    background: radial-gradient(
+    	circle, 
+	@color6,
+	@color11,
+	@color6
+	/* rgba(203,166,247,1) 0%,
+	rgba(193,168,247,1) 12%,
+	rgba(249,226,175,1) 19%,
+	rgba(189,169,247,1) 20%,
+	rgba(182,171,247,1) 24%,
+	rgba(198,255,194,1) 36%,
+	rgba(177,172,247,1) 37%,
+	rgba(170,173,248,1) 48%,
+	rgba(255,255,255,1) 52%,
+	rgba(166,174,248,1) 52%,
+	rgba(160,175,248,1) 59%,
+	rgba(148,226,213,1) 66%,
+	rgba(155,176,248,1) 67%,
+	rgba(152,177,248,1) 68%,
+	rgba(205,214,244,1) 77%,
+	rgba(148,178,249,1) 78%,
+	rgba(144,179,250,1) 82%,
+	rgba(180,190,254,1) 83%,
+	rgba(141,179,250,1) 90%,
+	rgba(137,180,250,1) 100% */
+    );
+    background-size: 400% 400%;
+    animation: gradient_f 30s infinite ease-in-out;
+    /*
+    background: linear-gradient(
+    	45deg, 
+	@color6,
+	@color11,
+	@color6
+    );
+    background-size: 1000% 100%;
+    animation: gradient_belt 5s infinite linear;
+    */
+}
+
+#workspaces button:hover {
+    background-color: @color1;
+    color: #cdd6f4;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    padding: 20px;
+    margin: 0px;
+}
+
+tooltip label {
+    color: @color11;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: #FFFFFF;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color: @background;
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @color11;
+    margin: 3px 15px 3px 0px;
+    padding: 2px 3px 1px 3px;
+    border-radius: 14px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 0.8;
+    border: 3px solid #FFFFFF;
+}
+
+#taskbar button {
+    margin: 0;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Generic
+ * ----------------------------------------------------- */
+
+#idle_inhibitor,
+#tray,
+#temperature,
+#disk,
+#memory,
+#cpu,
+#backlight,
+#clock,
+#battery,
+#battery.charging, 
+#battery.plugged,
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected,
+#pulseaudio,
+#pulseaudio.muted
+#network,
+#network.ethernet,
+#network.wifi,
+#network.disconnected
+{
+    font-size: 16px;
+    color:#FFFFFF;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity: 0.8;
+    border: 3px solid @color1;
+    border-radius: 14px;
+    background-color: @color11;
+}
+
+#battery.critical:not(.charging) {
+    /*background-color: #f53c3c;
+    color: #ffffff;*/
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Keyframes
+ * ----------------------------------------------------- */
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+
+@keyframes gradient {
+    0% {
+	background-position: 0% 50%;
+    }
+    50% {
+	background-position: 100% 30%;
+    }
+    100% {
+	background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient_f {
+    0% {
+	background-position: 0% 200%;
+    }
+    50% {
+	background-position: 200% 0%;
+    }
+    100% {
+	background-position: 400% 200%;
+    }
+}
+
+@keyframes gradient_f_nh {
+    0% {
+	background-position: 0% 200%;
+    }
+    100% {
+	background-position: 200% 200%;
+    }
+}
+
+@keyframes gradient_belt {
+    0% {
+    	background-position: 0 0;
+    }
+    100% {
+    	background-position: 100% 0;
+    }
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+
+label:focus {
+    background-color: #000000;
+}
+

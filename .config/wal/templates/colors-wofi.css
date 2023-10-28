@@ -1,0 +1,53 @@
+window {{
+    margin: 0px;
+    border-radius: 5px;
+    background-color: {color15};
+    font-family: "Hack Nerd Font";
+    font-size: 16px;
+}}
+
+#input {{
+    margin: 5px;
+    color: {color1};
+    background-color: {color15};
+}}
+
+#input image {{
+    color: {color1};
+}}
+
+#inner-box {{
+    margin: 5px;
+    border: none;
+    background-color: {color8};
+}}
+
+#outer-box {{
+    margin: 5px;
+    border: none;
+    background-color: {color8};
+}}
+
+#scroll {{
+    margin: 0px;
+    border: none;
+}}
+
+#text {{
+    margin: 5px;
+    border: none;
+    color: {color15};
+}} 
+
+#entry:selected {{
+    background-color: {color1};
+    font-weight: bold;
+    color: {color11};
+}}
+
+#text:selected {{
+    background-color: {color1};
+    font-weight: bold;
+    color: {color11};
+}}
+

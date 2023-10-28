@@ -1,0 +1,147 @@
+{
+    "layer": "top",
+    "height": 27, // Waybar height (to be removed for auto height)
+    "margin-top": 3,
+    "margin-left": 10,
+    "margin-bottom": 0,
+    "margin-right": 10,
+    "spacing": 5, // Gaps between modules (4px)
+
+    "modules-left": [ 
+    	"battery", 
+	"temperature", 
+	"disk",
+	"memory",
+	"cpu",
+	"idle_inhibitor"
+    ],
+    "modules-center": [
+    	"hyprland/workspaces", 
+	"custom/recorder"
+    ],
+    "modules-right": [
+	"tray", 
+	"bluetooth", 
+	"pulseaudio", 
+	"network",  
+	"clock"
+    ],
+    "hyprland/workspaces": {
+	"active-only": false,
+	"all-outputs": true,
+      	"format": "{icon}",
+      	"format-icons": {
+	    "urgent": "",
+	    "active": "",
+	    "default": ""
+       	},
+	"persistent_workspaces": {
+	    "*": 5
+	},
+    },
+    "idle_inhibitor": {
+	"format": "{icon}",
+      	"format-icons": {
+            "activated": " ",
+            "deactivated": " "
+      	},
+    },
+
+    "cpu": {
+    	"format": "  {usage}%"
+    },
+
+    "memory": {
+    	"format": "󰧑  {}%"
+    },
+
+    "disk": {
+	"format": "  {percentage_used}%",
+    },
+
+    "temperature": {
+	"interval": 30,
+      	"thermal-zone": 2,
+      	"critical-threshold": 70,
+      	"format-critical": "  {temperatureC}°C",
+      	"format": "  {temperatureC}°C"
+    },
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "tray": {
+        "icon-size": 13,
+        "tooltip": false,
+        "spacing": 10
+    },
+
+    "custom/recorder": {
+      	"format": " ",
+      	"return-type": "json",
+      	"interval": 1,
+      	"exec": "echo '{\"class\": \"recording\"}'",
+      	"exec-if": "pgrep wf-recorder"
+    },
+    
+    "clock": {
+        "format": "  {:%I:%M %p}",
+        "format-alt": "  {:%a %b %d}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "backlight": {
+        "device": "DP-1",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-click": "",
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "󰈀 wired",
+        "format-disconnected": "󱚵 ",
+        "on-click": "nmcli radio wifi off"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "  {volume}%",
+        "format-bluetooth-muted": "  ",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "󰋎 ",
+            "headset": "󰋎 ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        },
+    },
+
+    "bluetooth": {
+        "interval": 60,
+        "format": " {status}",
+        "on-click": "bluetoothctl power off",
+    },
+
+    "battery": {
+      "interval": 60,
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "max-length": 20,
+      "format": "{icon}  {capacity}%",
+      "format-warning": "{icon}  {capacity}%",
+      "format-critical": "{icon}  {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{icon}  {time}",
+      "format-full": "  {capacity}%",
+      "format-icons": [" ", "  ", "  ", "  ", "  "],
+    },
+}
