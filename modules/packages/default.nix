@@ -17,8 +17,7 @@ in {
 	    ffmpeg
 	    procps
 	    maintenance
+	    vim
 	];
-
-        home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
     };
 }

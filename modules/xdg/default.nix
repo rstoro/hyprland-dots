@@ -8,9 +8,9 @@ in {
     config = mkIf cfg.enable {
         xdg.userDirs = {
             enable = true;
-            wallpaper = "$HOME/wallpaper/";
-            documents = "$HOME/documents/";
-            downloads = "$HOME/downloads/";
+            wallpaper = "$HOME/wallpaper";
+            documents = "$HOME/documents";
+            downloads = "$HOME/downloads";
         };
     };
 }
