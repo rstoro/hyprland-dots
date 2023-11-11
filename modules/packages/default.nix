@@ -18,6 +18,7 @@ in {
 	    procps
 	    pfetch
 	    vim
+	    pavucontrol
 	    maintenance
 	];
     };
