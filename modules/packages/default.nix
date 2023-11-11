@@ -16,8 +16,9 @@ in {
  	    firefox
 	    ffmpeg
 	    procps
-	    maintenance
+	    pfetch
 	    vim
+	    maintenance
 	];
     };
 }
