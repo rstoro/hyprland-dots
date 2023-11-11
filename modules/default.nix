@@ -17,7 +17,6 @@
         ./starship
 
         # system
-        ./xdg
 	./packages
     ];
 }

@@ -17,7 +17,6 @@
         starship.enable = true;
 
         # system
-        xdg.enable = true;
         packages.enable = true;
     };
 }

@@ -10,7 +10,8 @@ in {
 	    (pkgs.python3.withPackages(ps: with ps; [ pywal ]))
 	];
 
-        home.file.".config/wal/colorschemes".source = ./colorschemes;
-        home.file.".config/wal/templates".source = ./templates;
+        home.file.".config/wal/templates/colors-hyprland.conf".source = ./templates/colors-hyprland.conf;
+        home.file.".config/wal/templates/colors-waybar.conf".source = ./templates/colors-waybar.conf;
+        home.file.".config/wal/templates/colors-wofi.conf".source = ./templates/colors-wofi.conf;
     };
 }
