@@ -25,7 +25,6 @@ in {
 	    pfetch
 	    vim
 	    pavucontrol
-	    maintenance
 	    (pkgs.python3.withPackages(ps: with ps; [ pywal ]))
 	];
     };
