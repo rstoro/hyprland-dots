@@ -65,7 +65,7 @@
 
     users.users.rs = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" ];
+        extraGroups = [ "input" "wheel" "networkmanager" ];
     };
 
     networking = {
@@ -101,6 +101,7 @@
             }];
         };
 
+    	rtkit.enable = true;
         protectKernelImage = true;
     };
 
@@ -112,7 +113,14 @@
 	pulseaudio.enable = true;
     };
 
-    security.rtkit.enable = true;
+    services.xserver = {
+	enable = true;
+	layout = "us";
+	xkbOptions = "eurosign:e,caps:escape";
+	#displayManager.startx.enable = true;
+	libinput.enable = true;
+	#printing.enable = true;
+    };
 
     services.pipewire = {
         enable = false;
@@ -126,6 +134,7 @@
         opengl = {
             enable = true;
             driSupport = true;
+	    #nvidia.modesetting.enable = true;
         };
     };
 

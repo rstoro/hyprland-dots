@@ -2,7 +2,7 @@
     description = "NixOS configuration";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "nixpkgs/nixos-unstable";
 
         home-manager = {
             url = "github:nix-community/home-manager";
@@ -19,7 +19,10 @@
         let
             system = "x86_64-linux";
 
-            pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+            pkgs = {
+		inherit nixpkgs;
+		cfg = { allowUnfree = true; };
+	    }
 
             lib = nixpkgs.lib;
 
@@ -38,9 +41,9 @@
                                 extraSpecialArgs = { inherit inputs; };
                                 users.rs = (./. + "/hosts/${hostname}/user.nix");
                             };
-                            nixpkgs.overlays = [
-                                nur.overlay
-                            ];
+                            #nixpkgs.overlays = [
+                            #    nur.overlay
+                            #];
                         }
                     ];
                     specialArgs = { inherit inputs; };
