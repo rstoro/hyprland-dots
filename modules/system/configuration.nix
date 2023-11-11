@@ -88,18 +88,19 @@
         DIRENV_LOG_FORMAT = "";
         DISABLE_QT5_COMPAT = "0";
 	NIXOS_OZONE_WL = "1";
+	WLR_NO_HARDWARE_CURSORS = "1";
     };
 
     security = {
         sudo.enable = true;
-        doas = {
-            enable = true;
-            extraRules = [{
-                users = [ "rs" ];
-                keepEnv = true;
-                persist = true;
-            }];
-        };
+        #doas = {
+        #    enable = true;
+        #    extraRules = [{
+        #        users = [ "rs" ];
+        #        keepEnv = true;
+        #        persist = true;
+        #    }];
+        #};
 
     	rtkit.enable = true;
         protectKernelImage = true;
@@ -136,6 +137,11 @@
             driSupport = true;
 	    #nvidia.modesetting.enable = true;
         };
+    };
+
+    programs.hyprland = {
+	enable = true;
+	xwayland.enable = true;
     };
 
     # Do not touch
