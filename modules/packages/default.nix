@@ -8,6 +8,14 @@ in {
     options.modules.packages = { enable = mkEnableOption "packages"; };
     config = mkIf cfg.enable {
 	home.packages = with pkgs; [
+	    hyprland
+	    waybar
+	    swww
+	    dunst
+	    wofi
+	    kitty
+	    ranger
+	    starship
 	    grim
 	    slurp
 	    clipman
@@ -20,6 +28,7 @@ in {
 	    vim
 	    pavucontrol
 	    maintenance
+	    (pkgs.python3.withPackages(ps: with ps; [ pywal ]))
 	];
     };
 }
