@@ -8,15 +8,15 @@
 
     fonts = {
         packages = with pkgs; [
-            openmoji-color
+            #openmoji-color
             (nerdfonts.override { fonts = [ "Hack" ]; })
         ];
 
         fontconfig = {
             hinting.autohint = true;
-            defaultFonts = {
-              emoji = [ "OpenMoji Color" ];
-            };
+            #defaultFonts = {
+            #  emoji = [ "OpenMoji Color" ];
+            #};
         };
     };
 
@@ -25,7 +25,7 @@
         portal = {
             enable = true;
             extraPortals = with pkgs; [
-                xdg-desktop-portal-wlr
+                #xdg-desktop-portal-wlr
                 xdg-desktop-portal-gtk
             ];
         };
