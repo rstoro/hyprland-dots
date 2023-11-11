@@ -4,7 +4,6 @@
     imports = [ ../../modules/default.nix ];
     config.modules = {
         # gui
-        firefox.enable = true;
         hyprland.enable = true;
         wal.enable = true;
         waybar.enable = true;
