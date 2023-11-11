@@ -2,6 +2,8 @@
 
 with lib;
 let cfg = config.modules.PROGRAM;
+    #script = pkgs.writeShellScriptBin "script" ''${builtins.readFile ./script}'';
+
 
 in {
     options.modules.PROGRAM = { enable = mkEnableOption "PROGRAM"; };

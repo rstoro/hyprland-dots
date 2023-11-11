@@ -2,8 +2,6 @@
 
 with lib;
 let cfg = config.modules.packages;
-    maintenance = pkgs.writeShellScriptBin "maintenance" ''${builtins.readFile ./maintenance}'';
-
 in {
     options.modules.packages = { enable = mkEnableOption "packages"; };
     config = mkIf cfg.enable {
