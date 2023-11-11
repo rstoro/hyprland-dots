@@ -12,7 +12,7 @@ in {
 	    slurp
 	    clipman
 	    procps
-	    wl-recorder
+	    wf-recorder
  	    firefox
 	    ffmpeg
 	    procps
