@@ -1,18 +1,13 @@
 { config, pkgs, inputs, ... }:
 
 {
-    # Remove unecessary preinstalled packages
-    environment.defaultPackages = [ ];
-    services.xserver.desktopManager.xterm.enable = false;
-
+    # laptop packages + required
     environment.systemPackages = with pkgs; [
         acpi tlp git
     ];
 
-    # Install fonts
     fonts = {
-        fonts = with pkgs; [
-            #roboto
+        packages = with pkgs; [
             openmoji-color
             (nerdfonts.override { fonts = [ "Hack" ]; })
         ];
@@ -26,7 +21,6 @@
     };
 
 
-    # Wayland stuff: enable XDG integration, allow sway to use brillo
     xdg = {
         portal = {
             enable = true;
@@ -34,11 +28,9 @@
                 xdg-desktop-portal-wlr
                 xdg-desktop-portal-gtk
             ];
-            gtkUsePortal = true;
         };
     };
 
-    # Nix settings, auto cleanup and enable flakes
     nix = {
         settings.auto-optimise-store = true;
         settings.allowed-users = [ "rs" ];
@@ -54,18 +46,16 @@
         '';
     };
 
-    # Boot settings: clean /tmp/, latest kernel and enable bootloader
     boot = {
-        cleanTmpDir = true;
+        tmp.cleanOnBoot = true;
         loader = {
-        systemd-boot.enable = true;
-        systemd-boot.editor = false;
-        efi.canTouchEfiVariables = true;
-        timeout = 0;
+	    systemd-boot.enable = true;
+	    systemd-boot.editor = false;
+	    efi.canTouchEfiVariables = true;
+	    timeout = 5;
         };
     };
 
-    # Set up locales (timezone and keyboard layout)
     time.timeZone = "EST5EDT";
     i18n.defaultLocale = "en_US.UTF-8";
     #console = {
@@ -73,13 +63,11 @@
         #keyMap = "us";
     #};
 
-    # Set up user and enable sudo
     users.users.rs = {
         isNormalUser = true;
         extraGroups = [ "input" "wheel" ];
     };
 
-    # Set up networking and secure it
     networking = {
         networkmanager.enable = true;
         firewall = {
@@ -90,7 +78,6 @@
         };
     };
 
-    # Set environment variables
     environment.variables = {
         NIXOS_CONFIG = "$HOME/.config/nixos/configuration.nix";
         NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
@@ -103,9 +90,8 @@
 	NIXOS_OZONE_WL = "1";
     };
 
-    # Security 
     security = {
-        sudo.enable = false;
+        sudo.enable = true;
         doas = {
             enable = true;
             extraRules = [{
@@ -115,11 +101,9 @@
             }];
         };
 
-        # Extra security
         protectKernelImage = true;
     };
 
-    # Sound
     sound = {
         enable = true;
     };
@@ -137,7 +121,6 @@
         pulse.enable = true;
     };
     
-    # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)
     hardware = {
         bluetooth.enable = false;
         opengl = {
