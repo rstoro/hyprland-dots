@@ -22,7 +22,7 @@
             pkgs = {
 		inherit nixpkgs;
 		cfg = { allowUnfree = true; };
-	    }
+	    };
 
             lib = nixpkgs.lib;
 
