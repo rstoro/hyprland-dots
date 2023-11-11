@@ -10,13 +10,19 @@
       ./hardware-configuration.nix
     ];
 
+  # enable flakes and nix-command
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # allow unfree
+  nixpkgs.config.allowUnfree = true;
+
   # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # networking
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   # timezone
   time.timeZone = "EST5EDT";
@@ -28,6 +34,7 @@
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "eurosign:e,caps:escape";
+  #services.xserver.displayManager.startx.enable = true;
 
   # touchpad support
   services.xserver.libinput.enable = true;
@@ -52,6 +59,7 @@
     packages = with pkgs; [
       firefox
       tree
+      discord
     ];
   };
 
@@ -78,7 +86,7 @@
     clipman
     grim
     slurp
-  ];
+  
 
   # hyprland
   programs.hyprland = {
@@ -110,9 +118,6 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.enable = false;
-
-  # enable nix-command
-  nix.settings.experimental-features = [ "nix-command" ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
