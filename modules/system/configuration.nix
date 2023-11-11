@@ -81,7 +81,7 @@
 
     # Set up networking and secure it
     networking = {
-        wireless.networkmanager.enable = true;
+        networkmanager.enable = true;
         firewall = {
             enable = true;
             allowedTCPPorts = [ 443 80 ];
