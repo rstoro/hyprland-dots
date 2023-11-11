@@ -17,6 +17,7 @@
         starship.enable = true;
 
         # system
+	bash.enable = true;
         packages.enable = true;
     };
 }
